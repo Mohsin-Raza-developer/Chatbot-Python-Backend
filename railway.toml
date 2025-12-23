@@ -1,0 +1,10 @@
+# Railway configuration for the RAG Chatbot Backend
+
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "uvicorn main:app --host 0.0.0.0 --port $PORT"
+healthCheck = "/v1/health"
+maxRestarts = 3
+restartAfterSeconds = 60
